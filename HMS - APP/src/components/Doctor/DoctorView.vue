@@ -3,18 +3,45 @@
     <div class="row mt-2">
       <ul class="col-12 d-flex justify-content-end">
         <li class="nav-item">
-          <router-link class="nav-link" to="/logout">Logout</router-link>
+          <button @click="logout" class="logout-button">Logout</button>
         </li>
       </ul> 
     </div>
     <h1>Doctor Dashboard</h1>
     <!-- Doctor specific content -->
+    <Profile />
   </div>
 </template>
 
-  <script>
-  export default {
-    name: 'DoctorView'
-  };
-  </script>
-  
+<script>
+import Profile from './ProfileView.vue';
+
+export default {
+  name: 'DoctorView',
+  components: {
+    Profile
+  },
+  methods: {
+    logout() {
+      // Implement your logout functionality here
+      // For example, redirect to the logout route
+      this.$router.push('/logout');
+    }
+  }
+};
+</script>
+
+<style scoped>
+.logout-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: darkred;
+}
+</style>
