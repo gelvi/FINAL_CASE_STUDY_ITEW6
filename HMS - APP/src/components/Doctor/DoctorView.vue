@@ -11,7 +11,7 @@
     <!-- Doctor specific content -->
     <div class="row mt-3">
       <div class="col-12 d-flex justify-content-start">
-        <router-link to="/amedicalrecords">
+        <router-link to="/DMedicalRecords">
           <button class="btn btn-primary">View Medical Records</button>
         </router-link>
       </div>

@@ -8,7 +8,7 @@
       <div class="row mt-2">
         <div class="col-md-6">
           <a @click="toggleCreatePatient" class="btn btn-primary">Add New Patient</a>
-          <router-link to="/amedicalrecords">
+          <router-link to="/PMedicalRecords">
           <button class="btn btn-primary">View Medical Records</button>
           </router-link>
         </div>
