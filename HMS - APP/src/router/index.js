@@ -7,9 +7,6 @@ import PatientView from '@/components/Patient/PatientView.vue';
 import AMedicalRecords from '@/components/Admin/AMedicalRecords.vue';
 import DMedicalRecords from '@/components/Doctor/DMedicalRecords.vue';
 import PMedicalRecords from '@/components/Patient/PMedicalRecords.vue';
-import AdminAppointments from '@/components/Admin/AdminAppointment';
-import DoctorAppointments from '@/components/Doctor/DoctorAppointment';
-import PatientAppointments from '@/components/Patient/PatientAppointment';
 import CreatePatient from '@/components/Patient/CreatePatient.vue';
 import DeletePatient from '@/components/Patient/DeletePatient.vue'
 import EditPatient from '@/components/Patient/EditPatient.vue'
@@ -65,18 +62,6 @@ const routes = [
       path: '/Patient',
       name: 'PMedRecords',
       component: PMedicalRecords
-    },
-    { 
-      path: '/admin/appointment', 
-      component: AdminAppointments 
-    },
-    { 
-      path: '/doctor/appointment', 
-      component: DoctorAppointments 
-    },
-    { 
-      path: '/patient/appointment', 
-      component: PatientAppointments 
     },
     {
       path: '/patient/create-patient',
