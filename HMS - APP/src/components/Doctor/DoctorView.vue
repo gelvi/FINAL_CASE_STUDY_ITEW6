@@ -9,6 +9,13 @@
     </div>
     <h1>Doctor Dashboard</h1>
     <!-- Doctor specific content -->
+    <div class="row mt-3">
+      <div class="col-12 d-flex justify-content-start">
+        <router-link to="/amedicalrecords">
+          <button class="btn btn-primary">View Medical Records</button>
+        </router-link>
+      </div>
+    </div>
     <Profile />
   </div>
 </template>

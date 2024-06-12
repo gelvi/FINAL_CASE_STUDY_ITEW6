@@ -8,6 +8,9 @@
       <div class="row mt-2">
         <div class="col-md-6">
           <a @click="toggleCreatePatient" class="btn btn-primary">Add New Patient</a>
+          <router-link to="/amedicalrecords">
+          <button class="btn btn-primary">View Medical Records</button>
+          </router-link>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
           <input type="text" v-model="searchQuery" placeholder="Search..." @keyup.enter="searchPosts"> 
