@@ -10,7 +10,9 @@ import PMedicalRecords from '@/components/Patient/PMedicalRecords.vue';
 import AdminAppointments from '@/components/Admin/AdminAppointment';
 import DoctorAppointments from '@/components/Doctor/DoctorAppointment';
 import PatientAppointments from '@/components/Patient/PatientAppointment';
-
+import CreatePatient from '@/components/Patient/CreatePatient.vue';
+import DeletePatient from '@/components/Patient/DeletePatient.vue'
+import EditPatient from '@/components/Patient/EditPatient.vue'
 
 const routes = [
     {
@@ -75,6 +77,21 @@ const routes = [
     { 
       path: '/patient/appointment', 
       component: PatientAppointments 
+    },
+    {
+      path: '/patient/create-patient',
+      name: 'CreatePatient',
+      component: CreatePatient
+    },
+    {
+      path: '/patient/delete-patient',
+      name: 'DeletePatient',
+      component: DeletePatient
+    },  
+    {
+      path: '/patient/edit-patient',
+      name: 'EditPatient',
+      component: EditPatient
     },
   ]
 const router = createRouter({
