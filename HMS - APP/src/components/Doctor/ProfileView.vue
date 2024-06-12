@@ -28,6 +28,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import axios from 'axios'; // Import axios
 
 export default {
   data() {
@@ -52,10 +53,16 @@ export default {
       }
     },
     fetchProfile() {
-      const user = this.getUser;
-      if (user) {
-        this.profile = { name: user.name, email: user.email, password: '', doctorType: user.doctorType };
-      }
+      axios.get('/api/user')
+        .then(response => {
+          const user = response.data;
+          if (user) {
+            this.profile = { name: user.name, email: user.email, doctorType: user.doctorType };
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching user profile: ', error);
+        });
     },
     updateProfile() {
       // Implement your logic to update the profile
