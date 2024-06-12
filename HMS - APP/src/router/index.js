@@ -4,6 +4,9 @@ import RegisterPage from '@/components/RegisterPage.vue';
 import AdminView from '@/components/Admin/AdminView.vue';
 import DoctorView from '@/components/Doctor/DoctorView.vue';
 import PatientView from '@/components/Patient/PatientView.vue';
+import AMedicalRecords from '@/components/Admin/AMedicalRecords.vue';
+import DMedicalRecords from '@/components/Doctor/DMedicalRecords.vue';
+import PMedicalRecords from '@/components/Patient/PMedicalRecords.vue';
 
 const routes = [
     {
@@ -41,6 +44,21 @@ const routes = [
         localStorage.removeItem('user_id');
         next('/');
       }
+    },
+    {
+      path: '/Admin',
+      name: 'AMedRecords',
+      component: AMedicalRecords
+    },
+    {
+      path: '/Doctor',
+      name: 'DMedRecords',
+      component: DMedicalRecords
+    },
+    {
+      path: '/Patient',
+      name: 'PMedRecords',
+      component: PMedicalRecords
     },
   ]
 const router = createRouter({
