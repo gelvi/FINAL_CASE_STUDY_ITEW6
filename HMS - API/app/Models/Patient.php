@@ -13,11 +13,13 @@ class Patient extends Model
         'user_id',
         'firstname',
         'lastname', 
+        'email',
         'date_of_birth',
         'gender',
         'address',
         'phone',
         'medical_history',
+        'password',
     ];
 
     public function user()

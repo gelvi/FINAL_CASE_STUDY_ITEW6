@@ -13,9 +13,11 @@ class Doctor extends Model
         'user_id', 
         'firstname',
         'lastname',
+        'email',
         'specialization',
         'license_number',
         'years_of_experience',
+        'password',
     ];
 
     public function user()
