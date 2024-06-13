@@ -60,6 +60,7 @@ class AuthController extends Controller
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'email' => $request->email,
+                 
                     'password' => Hash::make($request->password),
                     'role' => $request->role,
                     'remember_token' => Str::random(10),
@@ -70,6 +71,7 @@ class AuthController extends Controller
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'email' => $request->email,
+                   
                     'password' => Hash::make($request->password),
                     'role' => $request->role,
                     'remember_token' => Str::random(10),
@@ -79,9 +81,11 @@ class AuthController extends Controller
                     'user_id' => $user->id,
                     'firstname' => $user->firstname, // Retrieve from User model
                     'lastname' => $user->lastname, // Retrieve from User model
+                    'email' => $request->email,
                     'specialization' => $request->specialization,
                     'license_number' => $request->license_number,
                     'years_of_experience' => $request->years_of_experience,
+                    'password' => Hash::make($request->password),
                 ]);
                 break;
             case 'Patient':
@@ -89,6 +93,7 @@ class AuthController extends Controller
                     'firstname' => $request->firstname,
                     'lastname' => $request->lastname,
                     'email' => $request->email,
+                 
                     'password' => Hash::make($request->password),
                     'role' => $request->role,
                     'remember_token' => Str::random(10),
@@ -98,10 +103,13 @@ class AuthController extends Controller
                     'user_id' => $user->id,
                     'firstname' => $user->firstname, // Retrieve from User model
                     'lastname' => $user->lastname, // Retrieve from User model
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
                     'date_of_birth' => $request->date_of_birth,
                     'gender' => $request->gender,
                     'address' => $request->address,
                     'phone' => $request->phone,
+                    'medical_history' => $request->medical_history,
                 ]);
                 break;
             default:
@@ -127,8 +135,8 @@ class AuthController extends Controller
         // Determine the redirection path based on the user's role
         $redirectPath = match ($user->role) {
             'Admin' => '/admin',
-            'Doctor' => '/doctor',
-            'Patient' => '/patient',
+            'Doctor' => '/doctordashboard',
+            'Patient' => '/patientdashboard',
             default => '/',
         };
 
