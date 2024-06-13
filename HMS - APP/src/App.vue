@@ -1,23 +1,7 @@
+
 <template>
-  <div id="app">
-    <title>HMS gelvi</title>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <router-link class="nav-link" to="/">Login</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container mt-5">
-      <router-view></router-view>
-    </div>
-
-  </div>
+  <!-- the router view is where all the routes are rendered -->
+  <router-view/>
 </template>
 
 <script>
