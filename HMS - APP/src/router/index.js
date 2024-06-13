@@ -1,15 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '@/components/LoginPage.vue';
 import RegisterPage from '@/components/RegisterPage.vue';
+import PatientDashboard from '@/components/PatientDashboard.vue';
+import DoctorDashboard from '@/components/DoctorDashboard.vue';
 import AdminView from '@/components/Admin/AdminView.vue';
+import AppointmentView from '@/components/Appointment/AppointmentView.vue';
+import MedicalRecordsView from '@/components/MedicalRecords/MedicalRecordsView.vue'
 import DoctorView from '@/components/Doctor/DoctorView.vue';
 import PatientView from '@/components/Patient/PatientView.vue';
-import AMedicalRecords from '@/components/Admin/AMedicalRecords.vue';
-import DMedicalRecords from '@/components/Doctor/DMedicalRecords.vue';
-import PMedicalRecords from '@/components/Patient/PMedicalRecords.vue';
-import CreatePatient from '@/components/Patient/CreatePatient.vue';
-import DeletePatient from '@/components/Patient/DeletePatient.vue'
-import EditPatient from '@/components/Patient/EditPatient.vue'
+
 
 const routes = [
     {
@@ -23,19 +22,95 @@ const routes = [
       component: RegisterPage
     },
     {
+      path: '/patientdashboard',
+      name: 'PatientDashboard',
+      component: PatientDashboard,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
+    },
+    {
+      path: '/doctordashboard',
+      name: 'DoctorDashboard',
+      component: DoctorDashboard,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
+    },
+    {
       path: '/admin',
       name: 'AdminView',
-      component: AdminView
+      component: AdminView,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
     },
     {
-      path: '/doctor',
+      path: '/doctors',
       name: 'DoctorView',
-      component: DoctorView
+      component: DoctorView,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
     },
     {
-      path: '/patient',
+      path: '/patients',
       name: 'PatientView',
-      component: PatientView
+      component: PatientView,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
+    },
+    {
+      path: '/appointments',
+      name: 'AppointmentView',
+      component: AppointmentView,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
+    },
+    {
+      path: '/medicalRecords',
+      name: 'MedicalRecordsView',
+      component: MedicalRecordsView,
+      beforeEnter: (to, from, next) => {
+        // Check if user is logged in, if not, redirect to login page
+        if (localStorage.getItem('token')) {
+          next()
+        } else {
+          next('/') // Redirect to login page
+        }
+      }
     },
     {
       path: '/logout',
@@ -47,36 +122,6 @@ const routes = [
         localStorage.removeItem('user_id');
         next('/');
       }
-    },
-    {
-      path: '/Admin',
-      name: 'AMedRecords',
-      component: AMedicalRecords
-    },
-    {
-      path: '/Doctor',
-      name: 'DMedRecords',
-      component: DMedicalRecords
-    },
-    {
-      path: '/Patient',
-      name: 'PMedRecords',
-      component: PMedicalRecords
-    },
-    {
-      path: '/patient/create-patient',
-      name: 'CreatePatient',
-      component: CreatePatient
-    },
-    {
-      path: '/patient/delete-patient',
-      name: 'DeletePatient',
-      component: DeletePatient
-    },  
-    {
-      path: '/patient/edit-patient',
-      name: 'EditPatient',
-      component: EditPatient
     },
   ]
 const router = createRouter({
